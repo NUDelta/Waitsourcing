@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset='utf-8' />
-    <title>ISpy</title>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>   
- 	<script src="mainjava.js"></script>   
-	 
-    
+	<head>
+		<meta charset='utf-8' />
+		<title>ISpy</title>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="mainjava.js"></script>
+		<style>
+			img {height:100px}
 
-</head>
+			table, td
+			{
+				width:300;
+				align:center;
+			}
 
-<body>
-	<div id="header"><p>Look around. Do you see this?</p></div>
-	
-	<div id="yesno"><p><button onclick="yesans()">Yes</button>
-					   <button onclick="noans()">No</button>
-	</div>
-	<div id="responses"></div></br><br>
-					   
-	<div id="pictures"><img height="500" src=""></img><p id="texter"></p></div>
+		</style>
+	</head>
 
+	<body>
 
-</body>
+		<div id="header"><p>Look around. Do you see this?</p></div>
+
+		<div id="yesno"><p><button onclick="yesans()">Yes</button><button onclick="noans()">No</button></div>
+		<div id="responses"></div>
+
+		<table border="1" id="pictable">
+			<tr>
+				<td id="piconeone"><img src=""></img><p id="texter"></p></td>
+				<td id="piconetwo"><img src=""></img><p id="texter"></p></td>
+				<td id="piconethree"><img src=""></img><p id="texter"></p></td>
+			</tr>
+			<tr>
+				<td id="pictwoone"><img src=""></img><p id="texter"></p></td>
+				<td id="pictwotwo"><img src=""></img><p id="texter"></p></td>
+				<td id="pictwothree"><img src=""></img><p id="texter"></p></td>
+			</tr>
+			<tr>
+				<td id="picthreeone"><img src=""></img><p id="texter"></p></td>
+				<td id="picthreetwo"><img src=""></img><p id="texter"></p></td>
+				<td id="picthreethree"><img src=""></img><p id="texter"></p></td>
+			</tr>
+		</table>
+	</body>
 </html>

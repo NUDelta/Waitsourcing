@@ -1,6 +1,5 @@
 var yeses = 0;
-var nose = 0;
-
+var count = 0;
 
 var buswait = new Array();
 
@@ -17,17 +16,17 @@ titles[2] = "Tree";
 titles[3] = "Baby";
 
 
-var lengtharr = buswait.length
-var which = Math.floor((Math.random()*lengtharr));
+var which = Math.floor((Math.random()*buswait.length));
+
 
 $(document).ready(
 	function()
 	{
 	 $('body').hide().fadeIn(1000);
-	 
+
 	 $('img').attr('src',buswait[which]);
 	 $('#texter').text(titles[which]);
-	 $('#responses').html("Found: " + yeses + "<br>Not Found: " + nose + "<br>" + which);
+	 $('#responses').html("Found: " + yeses);
 	}
 );
 
@@ -35,33 +34,48 @@ $(document).ready(
 
 function yesans()
 {
-	if(lengtharr > 0)
+	if(buswait.length != 1)
 	{
 		yeses++;
-		$('#responses').html("Found: " + yeses + "<br>Not Found: " + nose + "<br>" + which);
 		buswait.splice(which,1);
 		titles.splice(which,1);
-		lengtharr--;
-		which = Math.floor((Math.random()*lengtharr)+1);
+		which = Math.floor((Math.random()*buswait.length));
 		$('img').attr('src',buswait[which]);
 		$('#texter').text(titles[which]);
+		$('#responses').html("Found: " + yeses);
 	}
-	
-	
+	else
+	{
+		if(count != 1)
+		{
+			yeses++;
+			count = 1;
+			$('#responses').html("Found: " + yeses);
+		}
+		$('img').attr('src',"");
+		$('#texter').text("");
+	}
 }
 
 function noans()
 {
-	if(lengtharr > 0)
+	if(buswait.length != 0)
 	{
-		nose++;
-		$('#responses').html("Found: " + yeses + "<br>Not Found: " + nose + "<br>" + which);
-		buswait.splice(which,1);
-		titles.splice(which,1);
-		lengtharr--;
-		which = Math.floor((Math.random()*lengtharr)+1);
-		$('img').attr('src',buswait[which]);
-		$('#texter').text(titles[which]);
+		if(buswait.length > 1)
+		{
+			buswait.splice(which,1);
+			titles.splice(which,1);
+			lengtharr = buswait.length;
+			which = Math.floor((Math.random()*buswait.length));
+			$('img').attr('src',buswait[which]);
+			$('#texter').text(titles[which]);
+		}
+		else
+		{
+			$('img').attr('src',"");
+			$('#texter').text("");
+		}
+		$('#responses').html("Found: " + yeses);
 	}
 }
 
