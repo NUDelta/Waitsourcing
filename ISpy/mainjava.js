@@ -10,14 +10,34 @@ var buswait32 = new Array();
 var buswait33 = new Array();
 
 
+
 buswait[0] = "img/busbench.png";
 buswait[1] = "img/businessphone.jpg";
 buswait[2] = "img/tree.png";
 buswait[3] = "img/baby.jpeg";
 
+
+
+
+function showPosition(position)
+{
+	$('#trackloc').html("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);	
+}
+
+
+
+
 $(document).ready(
+
 	function()
 	{
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
+	}
+	else { 
+		$('#trackloc').html("Geolocation is not supported by this browser.");
+	}
+
 	for(var i = 0; i < buswait.length; i++) {
 		buswait11[i] = buswait[i];
 		buswait12[i] = buswait[i];
