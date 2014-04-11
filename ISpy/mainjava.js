@@ -10,43 +10,26 @@ var buswait32 = new Array();
 var buswait33 = new Array();
 
 
-
 buswait[0] = "img/busbench.png";
 buswait[1] = "img/businessphone.jpg";
 buswait[2] = "img/tree.png";
 buswait[3] = "img/baby.jpeg";
-
 
 $(document).ready(
 	function()
 	{
 	for(var i = 0; i < buswait.length; i++) {
 		buswait11[i] = buswait[i];
-	}
-	for(var i = 0; i < buswait.length; i++) {
 		buswait12[i] = buswait[i];
-	}
-	for(var i = 0; i < buswait.length; i++) {
 		buswait13[i] = buswait[i];
-	}
-	for(var i = 0; i < buswait.length; i++) {
 		buswait21[i] = buswait[i];
-	}
-	for(var i = 0; i < buswait.length; i++) {
 		buswait22[i] = buswait[i];
-	}
-	for(var i = 0; i < buswait.length; i++) {
 		buswait23[i] = buswait[i];
-	}
-	for(var i = 0; i < buswait.length; i++) {
 		buswait31[i] = buswait[i];
-	}
-	for(var i = 0; i < buswait.length; i++) {
 		buswait32[i] = buswait[i];
-	}
-	for(var i = 0; i < buswait.length; i++) {
 		buswait33[i] = buswait[i];
 	}
+
 	var which11 = Math.floor((Math.random()*buswait11.length));
 	var which12 = Math.floor((Math.random()*buswait12.length));
 	var which13 = Math.floor((Math.random()*buswait13.length));
@@ -67,26 +50,18 @@ $(document).ready(
 	$('#picthreetwo').attr('src', buswait32[which32]);
 	$('#picthreethree').attr('src', buswait33[which33]);
 
-	$('#responses').html(which11 + " and " + which12);
-
-
-
-
 
 	$( "#piconeone" ).click(function()
 	{;
-		$('#responses').html(buswait11);
 			if(buswait11.length != 1)
 			{
 				buswait11.splice(which11,1);
 				which11 = Math.floor((Math.random()*buswait11.length));
 				$('#piconeone').attr('src',buswait11[which11]);
-				$('#responses').html(which11 + " and " + which12);
 			}
 			else
 			{
-				$('#piconeone').attr('src',"");
-				$('#responses').html(which11 + " and " + which12);
+				$('#piconeone').attr('src',"img/white.jpg");
 			}
 	});
 	$( "#piconetwo" ).click(function()
@@ -100,7 +75,7 @@ $(document).ready(
 				}
 				else
 				{
-					$('#piconetwo').attr('src',"");
+					$('#piconetwo').attr('src',"img/white.jpg");
 				}
 	});
 	$( "#piconethree" ).click(function()
@@ -114,7 +89,7 @@ $(document).ready(
 				}
 				else
 				{
-					$('#piconethree').attr('src',"");
+					$('#piconethree').attr('src',"img/white.jpg");
 				}
 	});
 	$( "#pictwoone" ).click(function()
@@ -128,7 +103,7 @@ $(document).ready(
 				}
 				else
 				{
-					$('#pictwoone').attr('src',"");
+					$('#pictwoone').attr('src',"img/white.jpg");
 				}
 	});
 	$( "#pictwotwo" ).click(function()
@@ -142,7 +117,7 @@ $(document).ready(
 				}
 				else
 				{
-					$('#pictwotwo').attr('src',"");
+					$('#pictwotwo').attr('src',"img/white.jpg");
 				}
 	});
 	$( "#pictwothree" ).click(function()
@@ -156,7 +131,7 @@ $(document).ready(
 				}
 				else
 				{
-					$('#pictwothree').attr('src',"");
+					$('#pictwothree').attr('src',"img/white.jpg");
 				}
 	});
 	$( "#picthreeone" ).click(function()
@@ -170,7 +145,7 @@ $(document).ready(
 				}
 				else
 				{
-					$('#picthreeone').attr('src',"");
+					$('#picthreeone').attr('src',"img/white.jpg");
 				}
 	});
 	$( "#picthreetwo" ).click(function()
@@ -184,7 +159,7 @@ $(document).ready(
 				}
 				else
 				{
-					$('#picthreetwo').attr('src',"");
+					$('#picthreetwo').attr('src',"img/white.jpg");
 				}
 	});
 	$( "#picthreethree" ).click(function()
@@ -198,7 +173,7 @@ $(document).ready(
 				}
 				else
 				{
-					$('#picthreethree').attr('src',"");
+					$('#picthreethree').attr('src',"img/white.jpg");
 				}
 	});
 
