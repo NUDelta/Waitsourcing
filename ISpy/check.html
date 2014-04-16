@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kittens</title>
+    <title>CheckMark</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="flickrgetter.js"></script>
+    <script src="mainjava.js"></script>
     <style>
-      img {}
+      img {width:100px; height:100px;}
 
       table
       {
@@ -19,16 +19,18 @@
         border: 1px solid black;
         text-align:center;
       }
-      h1{text-align:center;}
+      h1, h2, h3 {text-align:center;}
 
     </style
   </head>
   <body>
     <h1>Look around. Do you see this?</h1>
-	<h2 align="center" id="lookup"></h2>
-	<table border="1px" align="center">
+    <h2>Click an image that you see to increase your score!</h2>
+	<h3><div id="score"></div></h3>
+
+	<table border="1px" align="center" id="pictable">
 		<tr style="width:20%;">
-			<td><button type="button" class="btn btn-info"><img id="pic0" src=""></img></button></td>
+			<td><img id="pic0" src=""></img></td>
 			<td><img id="pic1" src=""></img></td>
 		</tr>
 		<tr style="width:20%;">
@@ -43,10 +45,7 @@
 			<td><img id="pic6" src=""></img></td>
 			<td><img id="pic7" src=""></img></td>
 		</tr>
-		<tr style="width:20%;">
-			<td><img id="pic8" src=""></img></td>
-			<td><img id="pic9" src=""></img></td>
-		</tr>
 	</table>
+
   </body>
 </html>

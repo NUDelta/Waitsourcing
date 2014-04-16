@@ -11,9 +11,9 @@ var buswait = new Array();
  * @type {string}
  */
 var query = new Array();
-query[0] = 'car';
-query[1] = 'car';
-query[2] = 'car';
+query[0] = 'audi';
+query[1] = 'kitten';
+query[2] = 'puppy';
 query[3] = 'car';
 query[4] = 'car';
 query[5] = 'car';
@@ -86,5 +86,6 @@ $(document).ready(function()
 {
 	PhotoGenerator.requestPhotos();
 	$('body').hide().fadeIn(1000);
+
 
 });
