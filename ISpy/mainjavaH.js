@@ -73,120 +73,120 @@ $(document).ready(
 
 
 	$( "#pic0" ).click(function() {					//on click, add to score and change picture
-		if(count0 < 9) {
-			count0++;
+		if(count0 < 8) {
+			count0+= 2;
 			$('#pic0').css('opacity',count0/10);
 			score++;
 			$('#score').html("Score: " + score);
 			changeColor();							//changing color of the score for .5 seconds
 		}
-		else if(count0 == 9){
-			count0++;
+		else if(count0 == 8){
+			count0+= 2;
 			score++;
 			$('#pic0').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
 		}
 	});
 	$( "#pic1" ).click(function() {
-		if(count1 < 9) {
-			count1++;
+		if(count1 < 8) {
+			count1+= 2;
 			$('#pic1').css('opacity',count1/10);
 			score++;
 			$('#score').html("Score: " + score);
 			changeColor();
 		}
-		else if(count1 == 9){
-			count1++;
+		else if(count1 == 8){
+			count1+= 2;
 			score++;
 			$('#pic1').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
 		}
 	});
 	$( "#pic2" ).click(function() {
-		if(count2 < 9) {
-			count2++;
+		if(count2 < 8) {
+			count2+= 2;
 			$('#pic2').css('opacity',count2/10);
 			score++;
 			$('#score').html("Score: " + score);
 			changeColor();
 		}
-		else if(count2 == 9){
-			count2++;
+		else if(count2 == 8){
+			count2+= 2;
 			score++;
 			$('#pic2').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
 		}
 	});
 	$( "#pic3" ).click(function() {
-		if(count3 < 9) {
-			count3++;
+		if(count3 < 8) {
+			count3+= 2;
 			$('#pic3').css('opacity',count3/10);
 			score++;
 			$('#score').html("Score: " + score);
 			changeColor();
 		}
-		else if(count3 == 9){
-			count3++;
+		else if(count3 == 8){
+			count3+= 2;
 			score++;
 			$('#pic3').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
 		}
 	});
 	$( "#pic4" ).click(function() {
-		if(count4 < 9) {
-			count4++;
+		if(count4 < 8) {
+			count4+= 2;
 			$('#pic4').css('opacity',count4/10);
 			score++;
 			$('#score').html("Score: " + score);
 			changeColor();
 		}
-		else if(count4 == 9){
-			count4++;
+		else if(count4 == 8){
+			count4+= 2;
 			score++;
 			$('#pic4').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
 		}
 	});
 	$( "#pic5" ).click(function() {
-		if(count5 < 9) {
-			count5++;
+		if(count5 < 8) {
+			count5+= 2;
 			$('#pic5').css('opacity',count5/10);
 			score++;
 			$('#score').html("Score: " + score);
 			changeColor();
 		}
-		else if(count5 == 9){
-			count5++;
+		else if(count5 == 8){
+			count5+= 2;
 			score++;
 			$('#pic5').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
 		}
 	});
 	$( "#pic6" ).click(function() {
-		if(count6 < 9) {
-			count6++;
+		if(count6 < 8) {
+			count6+= 2;
 			$('#pic6').css('opacity',count6/10);
 			score++;
 			$('#score').html("Score: " + score);
 			changeColor();
 		}
-		else if(count6 == 9){
-			count6++;
+		else if(count6 == 8){
+			count6+= 2;
 			score++;
 			$('#pic6').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
 		}
 	});
 	$( "#pic7" ).click(function() {
-		if(count7 < 9) {
-			count7++;
+		if(count7 < 8) {
+			count7+= 2;
 			$('#pic7').css('opacity',count7/10);
 			score++;
 			$('#score').html("Score: " + score);
 			changeColor();
 		}
-		else if(count7 == 9){
-			count7++;
+		else if(count7 == 8){
+			count7+= 2;
 			score++;
 			$('#pic7').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
