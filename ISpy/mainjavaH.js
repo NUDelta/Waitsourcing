@@ -85,6 +85,7 @@ $(document).ready(
 			score++;
 			$('#pic0').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
+			changeColor()
 		}
 	});
 	$( "#pic1" ).click(function() {
@@ -100,6 +101,7 @@ $(document).ready(
 			score++;
 			$('#pic1').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
+			changeColor()
 		}
 	});
 	$( "#pic2" ).click(function() {
@@ -115,6 +117,7 @@ $(document).ready(
 			score++;
 			$('#pic2').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
+			changeColor()
 		}
 	});
 	$( "#pic3" ).click(function() {
@@ -130,6 +133,7 @@ $(document).ready(
 			score++;
 			$('#pic3').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
+			changeColor()
 		}
 	});
 	$( "#pic4" ).click(function() {
@@ -145,6 +149,7 @@ $(document).ready(
 			score++;
 			$('#pic4').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
+			changeColor()
 		}
 	});
 	$( "#pic5" ).click(function() {
@@ -160,6 +165,7 @@ $(document).ready(
 			score++;
 			$('#pic5').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
+			changeColor()
 		}
 	});
 	$( "#pic6" ).click(function() {
@@ -175,6 +181,7 @@ $(document).ready(
 			score++;
 			$('#pic6').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
+			changeColor()
 		}
 	});
 	$( "#pic7" ).click(function() {
@@ -190,6 +197,7 @@ $(document).ready(
 			score++;
 			$('#pic7').attr('src',buswait[9]);
 			$('#score').html("Score: " + score);
+			changeColor()
 		}
 	});
 
