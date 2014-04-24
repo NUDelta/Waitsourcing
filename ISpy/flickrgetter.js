@@ -14,15 +14,15 @@ var query = new Array();
 query[0] = 'audi';
 query[1] = 'kitten';
 query[2] = 'puppy';
-query[3] = 'car';
-query[4] = 'car';
-query[5] = 'car';
-query[6] = 'car';
-query[7] = 'car';
+query[3] = 'backpack';
+query[4] = 'iPhone';
+query[5] = 'oreo';
+query[6] = 'Red Mango';
+query[7] = 'AEPi';
 query[8] = 'bmw';
 
 
-var randomnumber = Math.floor(Math.random() * (6 - 0 + 2)) + 0;
+var randomnumber = Math.floor((Math.random()*8)+1);
 
 var PhotoGenerator = {
   /**
@@ -37,11 +37,11 @@ var PhotoGenerator = {
   searchOnFlickr_: 'https://secure.flickr.com/services/rest/?' +
       'method=flickr.photos.search&' +
       'api_key=90485e931f687a9b9c2a66bf58a3861a&' +
-      'text=' + encodeURIComponent(query[8]) + '&' +
+      'text=' + encodeURIComponent(query[randomnumber]) + '&' +
       'safe_search=1&' +
       'content_type=1&' +
       'sort=interestingness-desc&' +
-      'per_page=10',
+      'per_page=8',
 
   /**
    * Sends an XHR GET request to grab photos of lots and lots of photos. The
@@ -63,10 +63,8 @@ var PhotoGenerator = {
    */
   showPhotos_: function (e) {
 	var Photos = e.target.responseXML.querySelectorAll('photo');
-	//$('#lookup').html(query[8]);
 	for (var i = 0; i < Photos.length; i++) {
 		buswait[i] = this.constructPhotoURL_(Photos[i]);
-		$('#pic' + i).attr('src',buswait[i]);
     }
   },
 
@@ -76,16 +74,34 @@ var PhotoGenerator = {
         ".static.flickr.com/" + photo.getAttribute("server") +
         "/" + photo.getAttribute("id") +
         "_" + photo.getAttribute("secret") +
-        "_s.jpg";
+        "_c.jpg";
   }
 };
+
+
+function getNewImage()
+{
+	randomnumber = Math.floor((Math.random()*8)+1);
+	PhotoGenerator.requestNewPhoto();
+
+
+}
 
 
 
 $(document).ready(function()
 {
-	PhotoGenerator.requestPhotos();
+    PhotoGenerator.requestPhotos();
 	$('body').hide().fadeIn(1000);
-
-
+	$('#populate').click(function()
+	{
+		for(var i = 0; i < 8; i++){
+			$('#pic' + i).attr('src',buswait[i]);}
+		$('#headder').html(query[randomnumber]);
+	});
+	$('#random').click(function () {
+	    location.reload();
+//		randomnumber = Math.floor((Math.random()*8)+1);
+//		PhotoGenerator.requestPhotos();
+	});
 });
