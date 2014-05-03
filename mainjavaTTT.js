@@ -50,19 +50,19 @@ buswait[10] = "img/greenO.jpg";
 
 var endgame = "img/catgame.jpg";
 
-titles[0] = "Baby";
-titles[1] = "Child on Leash";
-titles[2] = "Man Wearing a Suit";
-titles[3] = "Dog";
-titles[4] = "Full Dumpster";
-titles[5] = "Foodtruck";
-titles[6] = "Elderly Man";
-titles[7] = "School Bus";
-titles[8] = "Starbucks Coffeehouse";
+titles[0] = "Windows Computer";
+titles[1] = "TV";
+titles[2] = "Haoqi";
+titles[3] = "Undergraduate";
+titles[4] = "Clock";
+titles[5] = "Red Chair";
+titles[6] = "Mac Computer";
+titles[7] = "Blue Ball";
+titles[8] = "Diabetes Bear";
 
 function fillgrid() {
     for (var i = 0; i < buswait.length; i++) {
-        $('#pic' + i).attr('src', buswait[i]);
+   //     $('#pic' + i).attr('src', buswait[i]);
         $('#title' + i).html(titles[i]);
     }
 }
@@ -120,6 +120,13 @@ function WinGame() {
     turns = 10;
 }
 
+function getActiveTarget() {
+    //find which cell has the class active target
+    var blah = $('.activeTarget').first();
+    console.log(blah.attr('id'));
+    return blah
+}
+
 
 /*
 _0_|_1_|_2_
@@ -132,12 +139,35 @@ $(document).ready(
 	function () {
 
 
+	    $(".spyTarget").click(function (event) { // triggers open file menu 
+	        $(this).addClass("activeTarget");
+	        $('#takePicture').trigger('click');
+	        return false;
+
+	    });
+
+	    $('#takePicture').on('change', function (e) {
+	        console.log("got to takePicture");
+	        e.preventDefault();
+	        if (this.files.length === 0) return;
+
+	        var imageFile = this.files[0];
+	        var activeTarget = getActiveTarget();
+	        var imgURL = URL.createObjectURL(imageFile);
+	        activeTarget.attr('src', imgURL);
+//	        $(this).css('background-color', 'red');
+	        activeTarget.removeClass('activeTarget');
+	        
+	    });
+
+
 	    $('body').hide().fadeIn(1000);
 	    
 	    $(function () {
 	        fillgrid();     //execute fill grid
 	        whosturn();
 	    });
+/*
 	    $("#pic0").click(function () {
 	        if (count0 != 1) {
 	            if (turns == 0) {
@@ -359,5 +389,5 @@ $(document).ready(
 	            }
 	        }
 	    });
-
+*/
 	});
