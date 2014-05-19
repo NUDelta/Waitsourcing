@@ -28,17 +28,10 @@ function fillgrid() {
         $('#title' + i).html(titles[i]);
     }
     $('#switcher').html("Turn: Player 1");
-    $('#switcher').css('color', 'red');
+    $('#switcher').css('color', 'blue');
 }
 
 
-
-function winner() {
-
-
-
-
-}
 
 /*
 
@@ -52,7 +45,11 @@ function getClass() {
     console.log(classes);
 }
 
-
+function addcheck() {
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "checkbox");
+    document.body.appendChild(x);
+}
 
 
 
@@ -63,22 +60,32 @@ function getActiveTarget() {
     return blah
 }
 
-/*
+function howmany() {
+    console.log("got to howmany");
+    var check = new Array();
+    var totalcheck = 0;
+    for (var i = 0; i < 12; i++) {
+        check[i] = document.getElementById("check" + i).checked;
+        if (check[i] == true)
+            totalcheck++;
+    }
+    console.log("got to end of howmany");
+    $('#CheckedNum').html("You have checked " + totalcheck + " so far");
+
+}
+
+
 function whichChecked() {
 	var check = new Array();
 	var values = new Array();
 	var totalcheck = 0;
 	var fillList = 0;
-	for(var i = 0; i < 9; i++) {
+	for(var i = 0; i < 12; i++) {
 		check[i] = document.getElementById("check"+i).checked;
 		if(check[i] == true)
 			totalcheck++;
 	}
-	if (totalcheck != 9) {
-        for(var ii=)
-	    document.getElementById("check").checked = true
-
-	}
+	
 	for(var j = 0; j < check.length; j++) {
 		if(check[j] == true){
 			$('#title' + fillList).html(document.getElementById("check"+j).value);
@@ -87,7 +94,7 @@ function whichChecked() {
 		}
 	}
 }
-*/
+
 
 $(document).ready(
 
@@ -100,8 +107,9 @@ $(document).ready(
 	    $(".spyTarget").click(function (event) { // triggers open file menu
 	        $(this).addClass("activeTarget");
 	        var parid = $(this).parent().attr('id');
+	        $('#takePicture').trigger('click');
 	        if (switcher == 0) {
-	            $('#' + parid).css('background-color', 'red');
+	            $('#' + parid).css('background-color', 'blue');
 	            $(this).parent().removeClass("Player1");
 	            $(this).parent().removeClass("Player2");
 	            $(this).parent().addClass("Player1");
@@ -116,11 +124,10 @@ $(document).ready(
 	            $(this).parent().removeClass("Player2");
 	            $(this).parent().addClass("Player2");
 	            $('#switcher').html("Turn: Player 1");
-	            $('#switcher').css('color', 'red');
+	            $('#switcher').css('color', 'blue');
 	            getClass();
 	            switcher = 0;
 	        }
-	            $('#takePicture').trigger('click');
 	        return false;
 
 	    });
@@ -144,14 +151,29 @@ $(document).ready(
 	    $('body').hide().fadeIn(1000);
 
 	    $(function () {
+	        howmany();
 	        fillgrid();     //execute fill grid
 	    });
 
 		$('#submit').click(function() {
-//			whichChecked();
+			whichChecked();
 		});
 
+		$('.checkbox').click(function () {
+		    howmany();
+		});
 
+		$('#addtag').click(function () {
+		    addcheck();
+		});
 
-
+		$('#twoplayer').click(function () {
+		    window.location.href = "tictactoe2.html";
+		});
+		$('#oneplayer').click(function () {
+		    window.location.href = "tictactoe1.html";
+		});
+		$('#ABC').click(function () {
+		    window.location.href = "tictactoeABC.html";
+		});		
 	});

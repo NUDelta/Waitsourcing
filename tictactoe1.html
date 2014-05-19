@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TicTacToe</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="mainjavaTTT1.js"></script>
+    <style>
+        body {
+            font-family: "Lucida Bright", Georgia, serif;
+        }
+
+        table {
+            width: 75%;
+            text-align: center;
+        }
+        img {
+            width:100%;
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        #tag{
+            font-size:30px;
+        }
+
+        #seeing {
+            height: 150%;
+            width: 90%;
+            font-size: 200%;
+            margin-top: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .btn-warning {
+            height: 150%;
+            width: 90%;
+            font-size: 200%;
+            margin-top: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Time to start Spying</h1>
+    <h3>Find as many images as you can to win</h3>
+    <h3 id="countdown" class="timer"></h3>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form>
+                        <span class="checkbox"><input type="checkbox" value="iPhone" id="check0">iPhone<br></span>
+                        <span class="checkbox"><input type="checkbox" value="Mac" id="check1">Apple Computer<br></span>
+                        <span class="checkbox"><input type="checkbox" value="Student" id="check2">Student<br></span>
+                        <span class="checkbox"><input type="checkbox" value="Nicely Dressed Person" id="check3">Nicely Dressed Person<br></span>
+                        <span class="checkbox"><input type="checkbox" value="Clock" id="check4">Clock<br></span>
+                        <span class="checkbox"><input type="checkbox" value="Jeans" id="check5">Jeans<br></span>
+                        <span class="checkbox"><input type="checkbox" value="Android Phone" id="check6">Android Phone<br></span>
+                        <span class="checkbox"><input type="checkbox" value="Stuffed Animal" id="check7">Stuffed Animal<br></span>
+                        <span class="checkbox"><input type="checkbox" value="Shorts" id="check8">Shorts<br></span>
+                        <span class="checkbox"><input type="checkbox" value="Headphones" id="check9">Headphones<br></span>
+                        <span class="checkbox"><input type="checkbox" value="Rolling Chair" id="check10">Rolling Chair<br></span>
+                        <span class="checkbox"><input type="checkbox" value="Bicycle" id="check11">Bicycle<br></span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table border="0" align="center" id="pictable">
+        <tr style="width:20%;">
+           <td id="tag"></td>
+        </tr>
+        <tr style="width:40%;">
+            <td id="pic0"><img class="spyTarget" src="" /><div id="title0"></div></td>
+        </tr>
+    </table>
+
+    <p align="center"><br />
+        <button id="seeing" type="button" class="btn btn-info btn-lg"></button><br />
+        <button type="button" class="btn btn-warning btn-lg" id="skip">Skip</button>
+    </p>
+
+    <p hidden><input type="file" accept="image/*" capture="camera" id="takePicture"></p>
+</body>
+</html>
