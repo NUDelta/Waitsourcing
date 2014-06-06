@@ -1,7 +1,7 @@
-var categories = ["red", "blue", "green", "round", "electronic","automotive","square","yellow","orange","purple"]
+var categories = ["red", "blue", "green", "round", "electronic", "automotive", "square", "yellow", "orange", "purple"]
 var randomnumber = Math.floor(Math.random() * categories.length);
 function setupGame() {
-    $('#headtitle').html("Spy on something <b><u><i>" + categories[randomnumber] + "</i></u></b>");
+    $('#timer').html("2:00");
 
     $('#topimage').attr('src', 'imgABC/clickhere.jpg');
     for (var ii = 0; ii < 26; ii++) {
@@ -18,7 +18,6 @@ function showfound() {
     var imgSrc;
     for (var i = 0; i < 26; i++) {
         imgSrc = $('#pic' + i).attr("src");
-        console.log(imgSrc);
         if (imgSrc == "imgABC/white.jpg") {
             $('#pic' + i).hide();
         } else {
@@ -87,7 +86,6 @@ function upload(myfile) {
         });
     };
     reader.readAsDataURL(myfile)
-
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var go = false;
@@ -126,7 +124,7 @@ $(document).ready(function () {
 
     $('#score').html('Score: ' + score);
     var imagepath;
-//////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////
     $(".spyTargetFin").click(function (event) { // triggers open file menu
         for (var jj = 0; jj < 26; jj++) {
             $('#pic' + jj).removeClass('activeTarget');
@@ -145,19 +143,25 @@ $(document).ready(function () {
         setTimeout(function () {
             upload(imagepath);
             addScore();
+            randomnumber = Math.floor(Math.random() * categories.length);
             $('#topimage').attr('src', 'imgABC/clickhere.jpg');
-            }, 1500);
+            $('#headtitle').html("Now spy on something <b><u><i>" + categories[randomnumber] + "</i></u></b>");
+        }, 1500);
         var activeTarget = getActiveTarget();
         var imgURL = URL.createObjectURL(imageFile);
         activeTarget.attr('src', imgURL);
         activeTarget.removeClass('activeTarget');
     });
-//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////
 
     $('body').hide().fadeIn(1000);
     setupGame();
 
     $('#getstarted').click(function () {
+        $('#headtitle').html("Spy on something <b><u><i>" + categories[randomnumber] + "</i></u></b>");
         go = true;
         $('#getstarted').hide();
         $('#pictable').show();
@@ -170,9 +174,9 @@ $(document).ready(function () {
 
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////
     $('#seeFinals').click(function () {
-       showfound();
+        showfound();
     });
     $('#seeAllpics').click(function () {
         window.location.href = "htmlspecificEnd.html"
@@ -188,8 +192,9 @@ $(document).ready(function () {
     $('#skip').click(function () {
         randomnumber = Math.floor(Math.random() * categories.length);
         $('#headtitle').html("Now spy on something <b><u><i>" + categories[randomnumber] + "</i></u></b>");
-        //        score--;
+//        score--;
     });
+
 });
 
 
